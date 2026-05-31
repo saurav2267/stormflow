@@ -1,0 +1,33 @@
+# Environment variables - NEVER commit this
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Data files
+data/raw/
+*.csv
+*.json
+*.parquet
+
+# Logs
+logs/
+*.log
+
+# Airflow
+airflow.db
+airflow.cfg
+standalone_admin_password.txt
+
+# OS files
+.DS_Store
+Thumbs.db
