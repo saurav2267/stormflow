@@ -33,3 +33,4 @@ standalone_admin_password.txt
 Thumbs.db
 venv/
 drivers/
+models/*.pkl
