@@ -31,3 +31,4 @@ standalone_admin_password.txt
 # OS files
 .DS_Store
 Thumbs.db
+venv/
