@@ -10,7 +10,7 @@ load_dotenv()
 # Constants
 API_KEY = os.getenv("OPENWEATHER_API_KEY")
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
-CITY = "Dublin"
+CITY = "Dublin,IE"
 
 def fetch_weather(city):
     """Fetch current weather data for a given city"""
@@ -43,5 +43,13 @@ def parse_weather(data):
 if __name__ == "__main__":
     raw_data = fetch_weather(CITY)
     if raw_data:
+        # Save raw data
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        raw_path = f"data/raw/weather_{timestamp}.json"
+        with open(raw_path, "w") as f:
+            json.dump(raw_data, f, indent=2)
+        print(f"Raw data saved to {raw_path}")
+
+        # Parse and display
         parsed = parse_weather(raw_data)
         print(json.dumps(parsed, indent=2))
